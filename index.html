@@ -1,0 +1,1934 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#245358" />
+  <meta name="description"
+    content="Качественный ремонт квартир под ключ в Москве. Дизайн-проект, капитальный и косметический ремонт. Гарантия 3 года. Без предоплаты." />
+  <title>
+    ВАШ АГЕНТ — Ремонт квартир под ключ в Брянске | Дизайн и реализация
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+
+<body>
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">ВАШ АГЕНТ</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#portfolio">Проекты</a></li>
+        <li><a href="#visualizer">3D-визуализатор</a></li>
+        <li><a href="#order">Заказать</a></li>
+        <li><a href="#reviews">Отзывы</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+      <a href="tel:+74951234567" class="nav-phone">+7 (495) 123-45-67</a>
+      <button class="nav-cta" onclick="openConsultant()">Консультация</button>
+      <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== MOBILE DRAWER ===== -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-overlay" onclick="toggleMenu()"></div>
+    <div class="drawer-panel">
+      <div class="drawer-head">
+        <div class="nav-logo">
+          <span class="logo-icon">⬡</span>
+          <span class="logo-text">ВАШ АГЕНТ</span>
+        </div>
+        <button class="drawer-close" onclick="toggleMenu()" aria-label="Закрыть">
+          ✕
+        </button>
+      </div>
+      <ul class="drawer-links">
+        <li><a href="#services" onclick="toggleMenu()">Услуги и цены</a></li>
+        <li>
+          <a href="#portfolio" onclick="toggleMenu()">Реализованные проекты</a>
+        </li>
+        <li><a href="#design" onclick="toggleMenu()">Дизайн интерьера</a></li>
+        <li><a href="#process" onclick="toggleMenu()">Этапы работы</a></li>
+        <li><a href="#advantages" onclick="toggleMenu()">О компании</a></li>
+        <li><a href="#reviews" onclick="toggleMenu()">Отзывы</a></li>
+        <li><a href="#visualizer" onclick="toggleMenu()">3D-визуализатор</a></li>
+        <li><a href="#order" onclick="toggleMenu()">Заказать ремонт</a></li>
+        <li><a href="#faq" onclick="toggleMenu()">Вопросы и ответы</a></li>
+        <li><a href="#contacts" onclick="toggleMenu()">Контакты</a></li>
+      </ul>
+      <div class="drawer-foot">
+        <a href="tel:+74951234567" class="drawer-phone">+7 (495) 123-45-67</a>
+        <p class="drawer-hours">Пн – Вс: 9:00 – 21:00</p>
+        <div class="drawer-socials">
+          <a href="#" aria-label="WhatsApp">WA</a>
+          <a href="#" aria-label="Telegram">TG</a>
+          <a href="#" aria-label="VK">VK</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-blob blob-1"></div>
+      <div class="hero-blob blob-2"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge reveal">Профессиональный ремонт</div>
+      <h1 class="hero-title reveal reveal-delay-1">
+        Качественный<br /><em>дизайн и ремонт</em><br />квартир и домов
+      </h1>
+      <p class="hero-sub reveal reveal-delay-2">
+        От проекта до реализации под ключ. Дизайнерский, капитальный и
+        косметический ремонт. Гарантия 3 года, оплата по факту.
+      </p>
+      <div class="hero-actions reveal reveal-delay-3">
+        <a href="#contacts" class="btn-primary">Бесплатная консультация</a>
+        <a href="#portfolio" class="btn-ghost">Смотреть проекты</a>
+      </div>
+      <div class="hero-stats reveal reveal-delay-4">
+        <div class="stat">
+          <span class="stat-num" data-target="450">100</span><span>+</span>
+          <p>проектов</p>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="14">5</span><span> лет</span>
+          <p>опыта</p>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="98">90</span><span>%</span>
+          <p>довольных клиентов</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual reveal reveal-delay-2">
+      <div class="hero-room-card">
+        <div class="room-preview">
+          <div class="room-floor"></div>
+          <div class="room-wall"></div>
+          <div class="room-sofa"></div>
+          <div class="room-table"></div>
+          <div class="room-plant"></div>
+          <div class="room-lamp"></div>
+        </div>
+        <div class="room-label">
+          <span>Студия 28м²</span>
+          <span class="room-price">от 320 000 ₽</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST BADGES ===== -->
+  <section class="trust-section">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-card reveal">
+          <div class="trust-icon"></div>
+          <h3>Дизайн-проект</h3>
+          <p>Разработка проекта с учётом ваших пожеланий и бюджета</p>
+        </div>
+        <div class="trust-card reveal" style="--delay: 0.1s">
+          <div class="trust-icon"></div>
+          <h3>Без предоплаты</h3>
+          <p>Оплата по факту выполненных и принятых работ</p>
+        </div>
+        <div class="trust-card reveal" style="--delay: 0.2s">
+          <div class="trust-icon"></div>
+          <h3>3 года гарантии</h3>
+          <p>На все виды работ по официальному договору</p>
+        </div>
+        <div class="trust-card reveal" style="--delay: 0.3s">
+          <div class="trust-icon"></div>
+          <h3>450+ клиентов</h3>
+          <p>Довольных заказчиков по всему Брянску</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Что мы делаем</span>
+        <h2 class="section-title reveal">
+          Полный спектр<br /><em>ремонтных услуг</em>
+        </h2>
+        <p class="section-sub reveal">
+          Выполняем работы любой сложности — от косметического обновления до
+          создания авторских интерьеров с нуля
+        </p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal" style="--delay: 0s">
+          <div class="service-icon"></div>
+          <h3>Косметический ремонт</h3>
+          <p>
+            Освежаем интерьер без больших разрушений: покраска стен, поклейка
+            обоев, замена напольных покрытий и плинтусов.
+          </p>
+          <ul class="service-list">
+            <li>Подготовка и покраска стен</li>
+            <li>Поклейка обоев</li>
+            <li>Укладка ламината / линолеума</li>
+            <li>Замена розеток и выключателей</li>
+          </ul>
+          <div class="service-price">от 3 500 ₽/м²</div>
+          <a href="#contacts" class="service-link">Заказать →</a>
+        </div>
+        <div class="service-card reveal service-card--featured" style="--delay: 0.1s">
+          <div class="service-badge">Популярное</div>
+          <div class="service-icon"></div>
+          <h3>Дизайнерский ремонт</h3>
+          <p>
+            Авторский дизайн-проект + полная реализация. Эксклюзивный
+            результат с применением современных материалов и технологий.
+          </p>
+          <ul class="service-list">
+            <li>Дизайн-проект 3D с визуализацией</li>
+            <li>Авторский надзор</li>
+            <li>Премиум-материалы</li>
+            <li>Умный дом и сценарии освещения</li>
+          </ul>
+          <div class="service-price">от 12 000 ₽/м²</div>
+          <a href="#contacts" class="service-link">Заказать →</a>
+        </div>
+        <div class="service-card reveal" style="--delay: 0.2s">
+          <div class="service-icon"></div>
+          <h3>Капитальный ремонт</h3>
+          <p>
+            Полное преображение пространства: замена коммуникаций,
+            выравнивание стен, новая электрика и сантехника.
+          </p>
+          <ul class="service-list">
+            <li>Демонтаж и перепланировка</li>
+            <li>Замена электрики и сантехники</li>
+            <li>Стяжка пола, штукатурка стен</li>
+            <li>Чистовая отделка под ключ</li>
+          </ul>
+          <div class="service-price">от 7 500 ₽/м²</div>
+          <a href="#contacts" class="service-link">Заказать →</a>
+        </div>
+        <div class="service-card reveal" style="--delay: 0.3s">
+          <div class="service-icon"></div>
+          <h3>Ванная под ключ</h3>
+          <p>
+            Плитка, сантехника, освещение. Используем влагостойкие материалы с
+            гарантией от производителя.
+          </p>
+          <ul class="service-list">
+            <li>Замена труб и сантехники</li>
+            <li>Укладка плитки и керамогранита</li>
+            <li>Тёплый пол, сушилка для полотенец</li>
+            <li>Подключение душевых систем</li>
+          </ul>
+          <div class="service-price">от 45 000 ₽</div>
+          <a href="#contacts" class="service-link">Заказать →</a>
+        </div>
+        <div class="service-card reveal" style="--delay: 0.4s">
+          <div class="service-icon"></div>
+          <h3>Кухня под ключ</h3>
+          <p>
+            Фартук, встроенная техника, освещение и столешница на заказ.
+            Подбор мебели от наших партнёров.
+          </p>
+          <ul class="service-list">
+            <li>Фартук из плитки или стекла</li>
+            <li>Установка встраиваемой техники</li>
+            <li>Столешница из камня</li>
+            <li>Подсветка рабочей зоны</li>
+          </ul>
+          <div class="service-price">от 60 000 ₽</div>
+          <a href="#contacts" class="service-link">Заказать →</a>
+        </div>
+        <div class="service-card reveal" style="--delay: 0.5s">
+          <div class="service-icon"></div>
+          <h3>Дизайн-проект</h3>
+          <p>
+            3D-визуализация, рабочие чертежи, спецификация материалов и
+            техническая документация для подрядчиков.
+          </p>
+          <ul class="service-list">
+            <li>Планировочное решение</li>
+            <li>3D-визуализация всех помещений</li>
+            <li>Чертежи и развёртки стен</li>
+            <li>Подбор материалов и мебели</li>
+          </ul>
+          <div class="service-price">от 1 500 ₽/м²</div>
+          <a href="#contacts" class="service-link">Заказать →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PORTFOLIO ===== -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Наши работы</span>
+        <h2 class="section-title reveal">
+          Реализованные<br /><em>проекты</em>
+        </h2>
+        <p class="section-sub reveal">
+          Каждый проект — это история, в которой мы участвовали от первой идеи
+          до последнего штриха
+        </p>
+      </div>
+      <div class="portfolio-filter reveal">
+        <button class="filter-btn active" data-filter="all">Все</button>
+        <button class="filter-btn" data-filter="studio">Студии</button>
+        <button class="filter-btn" data-filter="one">1-комн.</button>
+        <button class="filter-btn" data-filter="two">2-комн.</button>
+        <button class="filter-btn" data-filter="three">3+ комн.</button>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item reveal" data-category="studio">
+          <div class="portfolio-img portfolio-img--studio1"
+            style="background-image: url('images/portfolio/studio_scandi.png');">
+            <div class="portfolio-overlay">
+              <span class="portfolio-area">28 м²</span>
+              <h4>Студия в скандинавском стиле</h4>
+              <p>Проспект Мира · 14 дней</p>
+              <span class="portfolio-price">380 000 ₽</span>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item reveal" data-category="one">
+          <div class="portfolio-img portfolio-img--one1"
+            style="background-image: url('images/portfolio/one_minimalism.png');">
+            <div class="portfolio-overlay">
+              <span class="portfolio-area">42 м²</span>
+              <h4>Современный минимализм</h4>
+              <p>Арбат · 21 день</p>
+              <span class="portfolio-price">620 000 ₽</span>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item portfolio-item--wide reveal" data-category="two">
+          <div class="portfolio-img portfolio-img--two1"
+            style="background-image: url('images/portfolio/two_loft.png');">
+            <div class="portfolio-overlay">
+              <span class="portfolio-area">65 м²</span>
+              <h4>Квартира в стиле лофт</h4>
+              <p>Сокол · 35 дней</p>
+              <span class="portfolio-price">1 100 000 ₽</span>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item reveal" data-category="three">
+          <div class="portfolio-img portfolio-img--three1"
+            style="background-image: url('images/portfolio/three_artdeco.png');">
+            <div class="portfolio-overlay">
+              <span class="portfolio-area">95 м²</span>
+              <h4>Классика с элементами ар-деко</h4>
+              <p>Тверская · 45 дней</p>
+              <span class="portfolio-price">2 400 000 ₽</span>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item reveal" data-category="studio">
+          <div class="portfolio-img portfolio-img--studio2"
+            style="background-image: url('images/portfolio/studio_japandi.png');">
+            <div class="portfolio-overlay">
+              <span class="portfolio-area">32 м²</span>
+              <h4>Студия в японском стиле</h4>
+              <p>Университет · 18 дней</p>
+              <span class="portfolio-price">450 000 ₽</span>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item reveal" data-category="two">
+          <div class="portfolio-img portfolio-img--two2"
+            style="background-image: url('images/portfolio/two_modern.png');">
+            <div class="portfolio-overlay">
+              <span class="portfolio-area">72 м²</span>
+              <h4>Современный с акцентами</h4>
+              <p>Кутузовский · 40 дней</p>
+              <span class="portfolio-price">1 350 000 ₽</span>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item reveal" data-category="one">
+          <div class="portfolio-img portfolio-img--one2" style="background-image: url('images/portfolio/one_eco.png');">
+            <div class="portfolio-overlay">
+              <span class="portfolio-area">48 м²</span>
+              <h4>Эко-стиль с деревом</h4>
+              <p>Сокольники · 24 дня</p>
+              <span class="portfolio-price">720 000 ₽</span>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item portfolio-item--wide reveal" data-category="three">
+          <div class="portfolio-img portfolio-img--three2"
+            style="background-image: url('images/portfolio/three_family.png');">
+            <div class="portfolio-overlay">
+              <span class="portfolio-area">110 м²</span>
+              <h4>Семейная квартира с дизайном</h4>
+              <p>ЖК «Алые паруса» · 55 дней</p>
+              <span class="portfolio-price">2 950 000 ₽</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured project detail card -->
+      <div class="featured-project reveal">
+        <div class="featured-project__visual" style="background-image: url('images/portfolio/three_family.png');">
+          <div class="featured-project__badge">Проект месяца</div>
+        </div>
+        <div class="featured-project__info">
+          <h3>3-комнатная квартира в ЖК «Алые паруса»</h3>
+          <p class="featured-project__desc">
+            Дизайн-проект в современном стиле. В этом проекте мы принимали
+            участие от перепланировки квартиры до подбора штор и декора. Над
+            проектом работала вся наша команда — от концепции до реализации.
+          </p>
+          <ul class="featured-project__bullets">
+            <li>Перепланировка с объединением кухни и гостиной</li>
+            <li>Утепление лоджии и замена стеклопакетов</li>
+            <li>Тёплые электрические полы во всех помещениях</li>
+            <li>Шумоизоляция пола и стен</li>
+            <li>Умный дом с управлением через приложение</li>
+            <li>Скрытые двери Invisible, встроенная мебель в потолок</li>
+          </ul>
+          <div class="featured-project__meta">
+            <div><span>Площадь</span><strong>110 м²</strong></div>
+            <div><span>Дизайн-проект</span><strong>305 400 ₽</strong></div>
+            <div>
+              <span>Стоимость работ</span><strong>1 816 800 ₽</strong>
+            </div>
+            <div><span>Срок ремонта</span><strong>10 месяцев</strong></div>
+          </div>
+          <a href="#contacts" class="btn-primary">Хочу такой же ремонт</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3D ВИЗУАЛИЗАТОР ИНТЕРЬЕРА (по §3.1 диплома) ===== -->
+  <section class="visualizer-section" id="visualizer">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">3D-визуализатор</span>
+        <h2 class="section-title reveal">
+          Спроектируйте интерьер<br /><em>в реальном времени</em>
+        </h2>
+        <p class="section-sub reveal">
+          Типовая сцена ~28 м². Выберите стиль, цвет стен, тип пола
+          и мебель — стоимость пересчитывается мгновенно
+        </p>
+      </div>
+
+      <div class="viz-wrapper reveal">
+        <!-- 3D canvas с обёрткой для WebGL fallback -->
+        <div id="vizContainer" class="viz-stage">
+          <canvas id="vizCanvas" aria-label="3D-визуализация интерьера"></canvas>
+          <div class="viz-hint">↻ Левая кнопка — поворот&nbsp;·&nbsp;Правая — перемещение&nbsp;·&nbsp;Колесо — масштаб
+          </div>
+        </div>
+
+        <!-- Контролы -->
+        <aside class="viz-controls">
+          <div class="viz-control-group">
+            <label class="viz-label">Стиль интерьера</label>
+            <div class="viz-options">
+              <button type="button" class="viz-opt viz-opt--active" data-style="modern"
+                onclick="vizSetStyleUI(this,'modern')">Современный</button>
+              <button type="button" class="viz-opt" data-style="scandi"
+                onclick="vizSetStyleUI(this,'scandi')">Скандинавский</button>
+              <button type="button" class="viz-opt" data-style="loft" onclick="vizSetStyleUI(this,'loft')">Лофт</button>
+              <button type="button" class="viz-opt" data-style="classic"
+                onclick="vizSetStyleUI(this,'classic')">Классика</button>
+            </div>
+          </div>
+
+          <div class="viz-control-group">
+            <label class="viz-label">Цвет стен</label>
+            <div class="viz-swatches">
+              <button type="button" class="viz-swatch viz-swatch--active" data-color="mist" style="background:#d4e0de"
+                title="Мятный" onclick="vizSetColorUI(this,'mist')"></button>
+              <button type="button" class="viz-swatch" data-color="cream" style="background:#e8ddd0" title="Кремовый"
+                onclick="vizSetColorUI(this,'cream')"></button>
+              <button type="button" class="viz-swatch" data-color="teal" style="background:#5e8281" title="Бирюзовый"
+                onclick="vizSetColorUI(this,'teal')"></button>
+              <button type="button" class="viz-swatch" data-color="warm" style="background:#b8a589"
+                title="Тёплый бежевый" onclick="vizSetColorUI(this,'warm')"></button>
+              <button type="button" class="viz-swatch" data-color="white" style="background:#f5f1ea" title="Молочный"
+                onclick="vizSetColorUI(this,'white')"></button>
+            </div>
+          </div>
+
+          <div class="viz-control-group">
+            <label class="viz-label">Тип пола</label>
+            <div class="viz-options">
+              <button type="button" class="viz-opt viz-opt--active" data-floor="parquet"
+                onclick="vizSetFloorUI(this,'parquet')">Паркет</button>
+              <button type="button" class="viz-opt" data-floor="tile"
+                onclick="vizSetFloorUI(this,'tile')">Плитка</button>
+              <button type="button" class="viz-opt" data-floor="laminate"
+                onclick="vizSetFloorUI(this,'laminate')">Ламинат</button>
+            </div>
+          </div>
+
+          <div class="viz-control-group">
+            <label class="viz-label">Мебель</label>
+            <div class="viz-checkboxes">
+              <label><input type="checkbox" checked onchange="vizToggleFurniture('sofa')"> Диван</label>
+              <label><input type="checkbox" checked onchange="vizToggleFurniture('table')"> Стол</label>
+              <label><input type="checkbox" checked onchange="vizToggleFurniture('wardrobe')"> Шкаф</label>
+              <label><input type="checkbox" checked onchange="vizToggleFurniture('tv')"> ТВ-зона</label>
+            </div>
+          </div>
+
+          <div class="viz-price-block">
+            <div class="viz-price-label">Предв. стоимость ремонта:</div>
+            <div class="viz-price-value" id="vizPrice">—</div>
+            <div class="viz-price-hint">сцена 28 м², формула P = S × k × C</div>
+          </div>
+
+          <div class="viz-control-group">
+            <label class="viz-label" for="vizSceneName">Название конфигурации</label>
+            <input type="text" id="vizSceneName" placeholder="например, «Моя студия»" />
+            <button type="button" class="btn-primary btn-sm viz-save-btn" onclick="vizSaveScene()">
+              Сохранить сцену
+            </button>
+            <div id="vizSaveStatus" class="viz-status"></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Inline-стили только для секции визуализатора ===== -->
+  <style>
+    .visualizer-section {
+      padding: 80px 0;
+      background: var(--c-bg, #faf8f5);
+    }
+
+    .viz-wrapper {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    @media (max-width: 900px) {
+      .viz-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .viz-stage {
+      position: relative;
+      background: linear-gradient(135deg, #f0ebe2 0%, #d4e0de 100%);
+      border-radius: 16px;
+      overflow: hidden;
+      min-height: 480px;
+      box-shadow: 0 8px 28px rgba(36, 83, 88, 0.10);
+    }
+
+    #vizCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      min-height: 480px;
+    }
+
+    .viz-hint {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(36, 83, 88, 0.85);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-family: 'DM Sans', sans-serif;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 600px) {
+      .viz-hint {
+        font-size: 10px;
+        padding: 6px 10px;
+      }
+    }
+
+    .viz-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid var(--c-border, #e8e0d3);
+    }
+
+    .viz-control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .viz-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--c-sub, #6b7b7a);
+      font-weight: 600;
+    }
+
+    .viz-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .viz-opt {
+      flex: 1;
+      min-width: fit-content;
+      padding: 8px 14px;
+      border: 1px solid var(--c-border, #e8e0d3);
+      background: #fff;
+      border-radius: 999px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .viz-opt:hover {
+      border-color: var(--c-teal, #5e8281);
+    }
+
+    .viz-opt--active {
+      background: var(--c-dark, #245358);
+      color: #fff;
+      border-color: var(--c-dark, #245358);
+    }
+
+    .viz-swatches {
+      display: flex;
+      gap: 8px;
+    }
+
+    .viz-swatch {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 1px var(--c-border, #e8e0d3);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .viz-swatch:hover {
+      transform: scale(1.1);
+    }
+
+    .viz-swatch--active {
+      box-shadow: 0 0 0 2px var(--c-dark, #245358);
+      transform: scale(1.1);
+    }
+
+    .viz-checkboxes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+
+    .viz-checkboxes label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .viz-price-block {
+      background: var(--c-mist, #d4e0de);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .viz-price-label {
+      font-size: 12px;
+      color: var(--c-sub, #6b7b7a);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .viz-price-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      color: var(--c-dark, #245358);
+      font-weight: 500;
+      margin-top: 4px;
+    }
+
+    .viz-price-hint {
+      font-size: 11px;
+      color: var(--c-sub, #6b7b7a);
+      margin-top: 4px;
+      font-style: italic;
+    }
+
+    #vizSceneName {
+      padding: 10px 12px;
+      border: 1px solid var(--c-border, #e8e0d3);
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+    }
+
+    #vizSceneName:focus {
+      outline: none;
+      border-color: var(--c-teal, #5e8281);
+    }
+
+    .viz-save-btn {
+      margin-top: 4px;
+    }
+
+    .viz-status {
+      font-size: 13px;
+      min-height: 18px;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .viz-status--pending {
+      color: var(--c-sub, #6b7b7a);
+    }
+
+    .viz-status--ok {
+      color: var(--c-teal, #5e8281);
+      font-weight: 600;
+    }
+
+    .viz-status--err {
+      color: #c0392b;
+      font-weight: 600;
+    }
+  </style>
+
+  <script>
+    // UI-обёртки для контролов визуализатора:
+    // обновляют визуальное состояние кнопок и вызывают функции из js/visualizer.js
+    function vizSetStyleUI(btn, style) {
+      document.querySelectorAll('.viz-opt[data-style]').forEach(b => b.classList.remove('viz-opt--active'));
+      btn.classList.add('viz-opt--active');
+      if (typeof window.vizSetStyle === 'function') window.vizSetStyle(style);
+    }
+    function vizSetColorUI(btn, color) {
+      document.querySelectorAll('.viz-swatch[data-color]').forEach(b => b.classList.remove('viz-swatch--active'));
+      btn.classList.add('viz-swatch--active');
+      if (typeof window.vizSetWallColor === 'function') window.vizSetWallColor(color);
+    }
+    function vizSetFloorUI(btn, floor) {
+      document.querySelectorAll('.viz-opt[data-floor]').forEach(b => b.classList.remove('viz-opt--active'));
+      btn.classList.add('viz-opt--active');
+      if (typeof window.vizSetFloor === 'function') window.vizSetFloor(floor);
+    }
+  </script>
+
+
+  <!-- ===== DESIGN SECTION ===== -->
+  <section class="design-section" id="design">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Дизайн интерьера</span>
+        <h2 class="section-title reveal">
+          Создаём<br /><em>уникальные пространства</em>
+        </h2>
+        <p class="section-sub reveal">
+          Современный дизайн — это уникальное пространство, объединяющее
+          эстетику, функциональность и технологии в одно гармоничное целое
+        </p>
+      </div>
+      <div class="design-grid">
+        <div class="design-card reveal">
+          <div class="design-card__num">01</div>
+          <h3>Современный стиль</h3>
+          <p>
+            Чистые линии, лаконичные формы, продуманные акценты. Современный
+            дизайн делает пространство функциональным и эстетичным.
+          </p>
+          <div class="design-card__price">от 2 500 ₽/м²</div>
+        </div>
+        <div class="design-card reveal" style="--delay: 0.1s">
+          <div class="design-card__num">02</div>
+          <h3>Скандинавский</h3>
+          <p>
+            Светлые тона, натуральное дерево, обилие света. Идеален для
+            небольших квартир — визуально расширяет пространство.
+          </p>
+          <div class="design-card__price">от 2 500 ₽/м²</div>
+        </div>
+        <div class="design-card reveal" style="--delay: 0.2s">
+          <div class="design-card__num">03</div>
+          <h3>Лофт</h3>
+          <p>
+            Открытые коммуникации, кирпичные стены, металл и дерево.
+            Брутальный характер с элементами индустриального стиля.
+          </p>
+          <div class="design-card__price">от 3 000 ₽/м²</div>
+        </div>
+        <div class="design-card reveal" style="--delay: 0.3s">
+          <div class="design-card__num">04</div>
+          <h3>Неоклассика</h3>
+          <p>
+            Изящные формы, лепнина, благородные оттенки. Сочетание
+            классических традиций и современных технологий.
+          </p>
+          <div class="design-card__price">от 3 500 ₽/м²</div>
+        </div>
+        <div class="design-card reveal" style="--delay: 0.4s">
+          <div class="design-card__num">05</div>
+          <h3>Минимализм</h3>
+          <p>
+            Ничего лишнего — только функция и форма. Чистое пространство для
+            жизни, работы и отдыха без визуального шума.
+          </p>
+          <div class="design-card__price">от 2 800 ₽/м²</div>
+        </div>
+        <div class="design-card reveal" style="--delay: 0.5s">
+          <div class="design-card__num">06</div>
+          <h3>Эко-стиль</h3>
+          <p>
+            Натуральные материалы, живые растения, тёплые оттенки. Создаёт
+            атмосферу уюта и близости к природе.
+          </p>
+          <div class="design-card__price">от 2 800 ₽/м²</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS ===== -->
+  <section class="process-section" id="process">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Как мы работаем</span>
+        <h2 class="section-title reveal">
+          7 этапов<br /><em>идеального ремонта</em>
+        </h2>
+        <p class="section-sub reveal">
+          Прозрачный и понятный процесс от первого звонка до сдачи готового
+          объекта
+        </p>
+      </div>
+      <div class="process-grid">
+        <div class="process-step reveal">
+          <div class="process-step__num">1</div>
+          <div class="process-step__content">
+            <h3>Заявка и консультация</h3>
+            <p>
+              Принимаем заявку, обсуждаем задачу, согласуем удобное время для
+              бесплатного выезда замерщика.
+            </p>
+            <span class="process-step__time">~ 1 день</span>
+          </div>
+        </div>
+        <div class="process-step reveal" style="--delay: 0.1s">
+          <div class="process-step__num">2</div>
+          <div class="process-step__content">
+            <h3>Замер и техзадание</h3>
+            <p>
+              Точные замеры объекта, фиксация коммуникаций, обсуждение
+              пожеланий и составление технического задания.
+            </p>
+            <span class="process-step__time">2–3 дня</span>
+          </div>
+        </div>
+        <div class="process-step reveal" style="--delay: 0.2s">
+          <div class="process-step__num">3</div>
+          <div class="process-step__content">
+            <h3>Дизайн-проект</h3>
+            <p>
+              Планировочные решения, 3D-визуализация, подбор материалов,
+              спецификация и подробная смета.
+            </p>
+            <span class="process-step__time">14–30 дней</span>
+          </div>
+        </div>
+        <div class="process-step reveal" style="--delay: 0.3s">
+          <div class="process-step__num">4</div>
+          <div class="process-step__content">
+            <h3>Договор и закупка</h3>
+            <p>
+              Подписываем официальный договор с фиксированной сметой. Закупаем
+              материалы по партнёрским ценам.
+            </p>
+            <span class="process-step__time">3–7 дней</span>
+          </div>
+        </div>
+        <div class="process-step reveal" style="--delay: 0.4s">
+          <div class="process-step__num">5</div>
+          <div class="process-step__content">
+            <h3>Черновые работы</h3>
+            <p>
+              Демонтаж, перепланировка, замена коммуникаций, штукатурка,
+              стяжка пола. Скрытый этап с фотоотчётами.
+            </p>
+            <span class="process-step__time">30–60 дней</span>
+          </div>
+        </div>
+        <div class="process-step reveal" style="--delay: 0.5s">
+          <div class="process-step__num">6</div>
+          <div class="process-step__content">
+            <h3>Чистовая отделка</h3>
+            <p>
+              Покраска, обои, плитка, напольные покрытия, установка дверей,
+              сантехники, освещения и розеток.
+            </p>
+            <span class="process-step__time">30–45 дней</span>
+          </div>
+        </div>
+        <div class="process-step reveal" style="--delay: 0.6s">
+          <div class="process-step__num">7</div>
+          <div class="process-step__content">
+            <h3>Сдача под ключ</h3>
+            <p>
+              Финальная уборка, расстановка мебели, проверка всех систем,
+              подписание акта приёмки и передача гарантии.
+            </p>
+            <span class="process-step__time">2–5 дней</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ADVANTAGES ===== -->
+  <section class="advantages-section" id="advantages">
+    <div class="container">
+      <div class="advantages-wrapper">
+        <div class="advantages-text reveal">
+          <span class="section-tag">О компании</span>
+          <h2 class="section-title">Почему<br /><em>выбирают нас</em></h2>
+          <p class="section-sub">
+            ВАШ АГЕНТ — команда профессионалов с 5-летним опытом работы в
+            сфере ремонта и дизайна интерьеров. Мы выполнили более 450
+            проектов в Брянске и области, и каждый из них — это уникальная
+            история, к которой мы подходили с душой и максимальной
+            ответственностью.
+          </p>
+          <a href="#contacts" class="btn-primary">Связаться с нами</a>
+        </div>
+        <div class="advantages-list">
+          <div class="advantage-card reveal" style="--delay: 0s">
+            <div class="advantage-card__icon">🏆</div>
+            <div>
+              <h4>5 лет опыта на рынке</h4>
+              <p>
+                Работаем с 2020 года, знаем все тонкости ремонта квартир в
+                Брянске — от хрущёвок до элитных ЖК.
+              </p>
+            </div>
+          </div>
+          <div class="advantage-card reveal" style="--delay: 0.1s">
+            <div class="advantage-card__icon">📋</div>
+            <div>
+              <h4>Официальный договор</h4>
+              <p>
+                Фиксированная смета, сроки, гарантии. Никаких «доплат за
+                непредвиденные работы» в процессе.
+              </p>
+            </div>
+          </div>
+          <div class="advantage-card reveal" style="--delay: 0.2s">
+            <div class="advantage-card__icon">👷</div>
+            <div>
+              <h4>Свои бригады</h4>
+              <p>
+                Без посредников и субподряда. Каждый мастер — наш сотрудник со
+                специализацией и опытом 5+ лет.
+              </p>
+            </div>
+          </div>
+          <div class="advantage-card reveal" style="--delay: 0.3s">
+            <div class="advantage-card__icon">📱</div>
+            <div>
+              <h4>Прозрачный контроль</h4>
+              <p>
+                Ежедневные фотоотчёты, онлайн-смета, личный кабинет с этапами
+                работ — вы всегда в курсе.
+              </p>
+            </div>
+          </div>
+          <div class="advantage-card reveal" style="--delay: 0.4s">
+            <div class="advantage-card__icon"></div>
+            <div>
+              <h4>Соблюдение сроков</h4>
+              <p>
+                Штрафные санкции прописаны в договоре. За каждый день
+                просрочки — компенсация заказчику.
+              </p>
+            </div>
+          </div>
+          <div class="advantage-card reveal" style="--delay: 0.5s">
+            <div class="advantage-card__icon">💎</div>
+            <div>
+              <h4>Партнёры-производители</h4>
+              <p>
+                Прямые контракты с поставщиками плитки, сантехники, мебели.
+                Скидки до 25% для наших клиентов.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS ===== -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Отзывы клиентов</span>
+        <h2 class="section-title reveal">
+          Что говорят<br /><em>о нашей работе</em>
+        </h2>
+        <p class="section-sub reveal">
+          Реальные отзывы от заказчиков, которые доверили нам свой дом
+        </p>
+      </div>
+
+      <div class="reviews-grid">
+        <article class="review-card reveal">
+          <div class="review-card__head">
+            <div class="review-avatar" style="background: #5e8281">АК</div>
+            <div>
+              <div class="review-name">Анна К.</div>
+              <div class="review-meta">ЖК «Алые паруса» · 2-комн., 72 м²</div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+          <p class="review-text">
+            «Делали капитальный ремонт с дизайн-проектом. Сроки соблюдены
+            практически день в день. Ребята работали аккуратно — соседи даже
+            не жаловались! Отдельное спасибо Ирине за дизайн-проект:
+            получилось именно так, как мы хотели».
+          </p>
+          <div class="review-tags">
+            <span>Капитальный ремонт</span>
+            <span>Дизайн-проект</span>
+          </div>
+        </article>
+
+        <article class="review-card reveal" style="--delay: 0.1s">
+          <div class="review-card__head">
+            <div class="review-avatar" style="background: #245358">МС</div>
+            <div>
+              <div class="review-name">Михаил С.</div>
+              <div class="review-meta">Арбат · 1-комн., 42 м²</div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+          <p class="review-text">
+            «Покупали квартиру в новостройке, нужен был полный ремонт. Выбрали
+            ВАШ АГЕНТ по рекомендации друзей и не пожалели. Договор честный,
+            доплат за "неожиданности" не было. Качество — на высшем уровне,
+            ремонту уже год — ничего не отвалилось».
+          </p>
+          <div class="review-tags">
+            <span>Новостройка</span>
+            <span>Под ключ</span>
+          </div>
+        </article>
+
+        <article class="review-card reveal" style="--delay: 0.2s">
+          <div class="review-card__head">
+            <div class="review-avatar" style="background: #b8a589">ЕВ</div>
+            <div>
+              <div class="review-name">Екатерина В.</div>
+              <div class="review-meta">Сокол · 3-комн., 95 м²</div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+          <p class="review-text">
+            «Перепланировку согласовывали через ВАШ АГЕНТ — взяли всё на
+            себя, от заявки в БТИ до утверждения. Параллельно вели
+            дизайн-проект. Очень оценили личный кабинет с фотоотчётами — мы
+            жили в другом городе и могли отслеживать стройку».
+          </p>
+          <div class="review-tags">
+            <span>Перепланировка</span>
+            <span>Удалённый контроль</span>
+          </div>
+        </article>
+
+        <article class="review-card reveal" style="--delay: 0.3s">
+          <div class="review-card__head">
+            <div class="review-avatar" style="background: #5e8281">ДМ</div>
+            <div>
+              <div class="review-name">Дмитрий М.</div>
+              <div class="review-meta">Кутузовский · 2-комн., 65 м²</div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+          <p class="review-text">
+            «Делали лофт. У ребят отлично получилось передать атмосферу —
+            открытая кирпичная кладка, металл, дерево. Долго подбирали
+            фактуры, но дизайнер не торопила, давала варианты. Финальный
+            результат превзошёл ожидания».
+          </p>
+          <div class="review-tags">
+            <span>Лофт</span>
+            <span>Авторский дизайн</span>
+          </div>
+        </article>
+
+        <article class="review-card reveal" style="--delay: 0.4s">
+          <div class="review-card__head">
+            <div class="review-avatar" style="background: #245358">ОБ</div>
+            <div>
+              <div class="review-name">Ольга Б.</div>
+              <div class="review-meta">Проспект Мира · студия, 28 м²</div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+          <p class="review-text">
+            «Купила первую свою квартиру-студию. Бюджет был ограничен, но
+            ребята помогли подобрать материалы, не сэкономив на качестве.
+            Сделали за 14 дней — въехала ровно к новому году. Большое
+            спасибо!»
+          </p>
+          <div class="review-tags">
+            <span>Студия</span>
+            <span>Бюджетный ремонт</span>
+          </div>
+        </article>
+
+        <article class="review-card reveal" style="--delay: 0.5s">
+          <div class="review-card__head">
+            <div class="review-avatar" style="background: #b8a589">АП</div>
+            <div>
+              <div class="review-name">Александр П.</div>
+              <div class="review-meta">Тверская · 3-комн., 110 м²</div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+          <p class="review-text">
+            «Заказывал классику с элементами ар-деко. Сложный проект — много
+            лепнины, молдингов, авторская мебель. Команда справилась отлично:
+            каждая мелочь на своём месте. Спустя 2 года всё выглядит как в
+            день сдачи».
+          </p>
+          <div class="review-tags">
+            <span>Классика</span>
+            <span>Премиум-сегмент</span>
+          </div>
+        </article>
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- ===== 3-ЭТАПНАЯ ФОРМА ЗАКАЗА (FR-04 диплома) ===== -->
+  <section class="order-section" id="order">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Расчёт и заявка</span>
+        <h2 class="section-title reveal">
+          Закажите ремонт<br /><em>за 3 шага</em>
+        </h2>
+        <p class="section-sub reveal">
+          Рассчитайте стоимость по формуле P = S × k × C, оставьте контакты —
+          менеджер свяжется с вами в течение 30 минут
+        </p>
+      </div>
+
+      <div class="order-wrapper reveal">
+        <!-- Индикатор шагов -->
+        <ol class="step-indicators">
+          <li class="step-indicator active" data-step="1"><span class="step-num">1</span><span
+              class="step-name">Расчёт</span></li>
+          <li class="step-indicator" data-step="2"><span class="step-num">2</span><span
+              class="step-name">Контакты</span></li>
+          <li class="step-indicator" data-step="3"><span class="step-num">3</span><span
+              class="step-name">Подтверждение</span></li>
+        </ol>
+
+        <div id="orderFormContainer" class="order-form-container">
+          <!-- ── Шаг 1: Калькулятор ── -->
+          <div class="form-step active" id="orderStep1">
+            <form id="orderCalcForm">
+              <h3 class="form-step__title">Шаг 1. Расчёт предварительной стоимости</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="calcType">Тип ремонта</label>
+                  <select id="calcType" required>
+                    <option value="cosmetic">Косметический (k = 1.0)</option>
+                    <option value="capital" selected>Капитальный (k = 1.8)</option>
+                    <option value="designer">Дизайнерский (k = 2.5)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="calcArea">Площадь, м²</label>
+                  <input type="number" id="calcArea" min="1" step="0.1" placeholder="например, 50" required />
+                </div>
+              </div>
+              <div id="calcError" class="form-error" style="display:none"></div>
+              <div id="calcResult" class="calc-result" style="display:none"></div>
+              <div class="form-actions">
+                <button type="submit" class="btn-primary">Рассчитать стоимость</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- ── Шаг 2: Контакты ── -->
+          <div class="form-step" id="orderStep2">
+            <form id="orderContactsForm">
+              <h3 class="form-step__title">Шаг 2. Контактные данные</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="orderName">Имя <span class="req">*</span></label>
+                  <input type="text" id="orderName" placeholder="Как к вам обращаться?" required />
+                </div>
+                <div class="form-group">
+                  <label for="orderPhone">Телефон <span class="req">*</span></label>
+                  <input type="tel" id="orderPhone" placeholder="+7 (___) ___-__-__" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="orderEmail">Email (необязательно)</label>
+                  <input type="email" id="orderEmail" placeholder="you@example.ru" />
+                </div>
+                <div class="form-group">
+                  <label for="orderAddress">Адрес (необязательно)</label>
+                  <input type="text" id="orderAddress" placeholder="Москва, ул..." />
+                </div>
+              </div>
+              <label class="checkbox-row">
+                <input type="checkbox" required checked />
+                <span>Согласен с <a href="#">обработкой персональных данных</a> (152-ФЗ)</span>
+              </label>
+              <div id="contactsError" class="form-error" style="display:none"></div>
+              <div class="form-actions">
+                <button type="button" class="btn-secondary" onclick="orderStepBack()">← Назад</button>
+                <button type="submit" class="btn-primary">Продолжить →</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- ── Шаг 3: Подтверждение ── -->
+          <div class="form-step" id="orderStep3">
+            <form id="orderSubmitForm">
+              <h3 class="form-step__title">Шаг 3. Проверьте данные перед отправкой</h3>
+              <div id="orderReview" class="order-review"></div>
+              <div id="submitError" class="form-error" style="display:none"></div>
+              <div class="form-actions">
+                <button type="button" class="btn-secondary" onclick="orderStepBack()">← Изменить</button>
+                <button type="submit" class="btn-primary">Отправить заявку</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Блок успеха -->
+        <div id="orderSuccess" style="display:none"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Inline-стили только для секции заказа ===== -->
+  <style>
+    .order-section {
+      padding: 80px 0;
+      background: var(--c-cream, #e8ddd0);
+    }
+
+    .order-wrapper {
+      max-width: 800px;
+      margin: 32px auto 0;
+    }
+
+    .step-indicators {
+      display: flex;
+      gap: 0;
+      list-style: none;
+      padding: 0;
+      margin: 0 0 32px;
+      background: #fff;
+      border-radius: 999px;
+      padding: 6px;
+      box-shadow: 0 4px 12px rgba(36, 83, 88, 0.06);
+    }
+
+    .step-indicator {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      transition: all 0.3s ease;
+    }
+
+    .step-indicator .step-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--c-mist, #d4e0de);
+      color: var(--c-dark, #245358);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .step-indicator.active {
+      background: var(--c-dark, #245358);
+      color: #fff;
+    }
+
+    .step-indicator.active .step-num {
+      background: #fff;
+      color: var(--c-dark, #245358);
+    }
+
+    .step-indicator.completed .step-num {
+      background: var(--c-teal, #5e8281);
+      color: #fff;
+    }
+
+    .step-indicator.completed .step-num::after {
+      content: '';
+    }
+
+    .order-form-container {
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 8px 24px rgba(36, 83, 88, 0.08);
+    }
+
+    .form-step {
+      display: none;
+    }
+
+    .form-step.active {
+      display: block;
+    }
+
+    .form-step__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      color: var(--c-dark, #245358);
+      margin: 0 0 24px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 600px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--c-sub, #6b7b7a);
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 12px 14px;
+      border: 1px solid var(--c-border, #e8e0d3);
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--c-teal, #5e8281);
+    }
+
+    .req {
+      color: #c0392b;
+    }
+
+    .form-error {
+      background: #fdecea;
+      border: 1px solid #f5b7b1;
+      color: #c0392b;
+      padding: 10px 14px;
+      border-radius: 8px;
+      margin: 12px 0;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+    }
+
+    .calc-result {
+      background: var(--c-mist, #d4e0de);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      margin: 16px 0;
+    }
+
+    .calc-result__title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--c-sub, #6b7b7a);
+    }
+
+    .calc-result__value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      color: var(--c-dark, #245358);
+      font-weight: 500;
+      margin: 8px 0 4px;
+    }
+
+    .calc-result__breakdown {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      color: var(--c-sub, #6b7b7a);
+    }
+
+    .form-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .order-review {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .order-review .review-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 14px;
+      background: var(--c-bg, #faf8f5);
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+    }
+
+    .order-review .review-row span {
+      color: var(--c-sub, #6b7b7a);
+    }
+
+    .order-review .review-row strong {
+      color: var(--c-dark, #245358);
+    }
+
+    .order-success {
+      background: #fff;
+      border-radius: 16px;
+      padding: 48px 24px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(36, 83, 88, 0.08);
+      position: relative;
+    }
+
+    .order-success .success-ring {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 4px solid var(--c-teal, #5e8281);
+      margin: 0 auto 8px;
+    }
+
+    .order-success .success-check {
+      font-size: 64px;
+      color: var(--c-teal, #5e8281);
+      line-height: 1;
+      margin-top: -68px;
+      margin-bottom: 16px;
+    }
+
+    .order-success h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      color: var(--c-dark, #245358);
+      margin: 0 0 12px;
+    }
+
+    .order-success p {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--c-sub, #6b7b7a);
+      margin: 4px 0;
+    }
+
+    .order-success .btn-primary {
+      margin-top: 16px;
+    }
+  </style>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Вопросы и ответы</span>
+        <h2 class="section-title reveal">
+          Часто задаваемые<br /><em>вопросы</em>
+        </h2>
+        <p class="section-sub reveal">
+          Ответы на самые популярные вопросы наших клиентов
+        </p>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item reveal">
+          <summary>
+            <span>С чего начинается работа? Сколько стоит выезд замерщика?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Работа начинается с бесплатной консультации по телефону или в
+              офисе. Затем мы согласовываем удобное время для выезда нашего
+              замерщика — это <strong>бесплатно</strong> по Москве и
+              ближайшему Подмосковью. Замерщик приезжает с инструментом,
+              фиксирует размеры помещения, расположение коммуникаций, и
+              обсуждает с вами пожелания.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal" style="--delay: 0.05s">
+          <summary>
+            <span>Какие гарантии вы даёте на работы?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              На все виды работ —
+              <strong>3 года официальной гарантии</strong>, прописанной в
+              договоре. На оборудование и инженерные системы — гарантия
+              производителя (обычно 2–5 лет). Если в течение гарантийного
+              срока проявится дефект работ — устраняем за свой счёт. Это
+              касается любых работ: от штукатурки до электрики.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal" style="--delay: 0.1s">
+          <summary>
+            <span>Сколько по времени делается ремонт?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Сроки зависят от площади и типа ремонта. Ориентировочные сроки:
+            </p>
+            <ul>
+              <li>
+                <strong>Косметический</strong> студии (~30 м²) — 14–20 дней
+              </li>
+              <li>
+                <strong>Капитальный</strong> 1-комн. (~40 м²) — 30–45 дней
+              </li>
+              <li>
+                <strong>Капитальный</strong> 2-комн. (~65 м²) — 50–75 дней
+              </li>
+              <li>
+                <strong>Дизайнерский</strong> с проектом (90+ м²) — от 4
+                месяцев
+              </li>
+            </ul>
+            <p>
+              Конкретные сроки фиксируются в договоре. За каждый день
+              просрочки — штраф нам в пользу заказчика.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal" style="--delay: 0.15s">
+          <summary>
+            <span>Можно ли вносить изменения по ходу ремонта?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Да, конечно. Незначительные изменения (цвет, материал,
+              расположение розеток) обычно вносятся без удорожания.
+              Существенные изменения (изменение планировки, замена черновых
+              материалов) согласовываются дополнительным соглашением к
+              договору с фиксацией новой сметы и сроков.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal" style="--delay: 0.2s">
+          <summary>
+            <span>Кто закупает материалы — мы или вы?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Возможны оба варианта. <strong>Если закупаем мы</strong> — вы
+              получаете партнёрские скидки до 25%, всю отчётную документацию и
+              снимаете с себя логистику.
+              <strong>Если закупаете вы сами</strong> — мы предоставляем
+              подробную спецификацию с количеством, размерами и
+              рекомендованными производителями.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal" style="--delay: 0.25s">
+          <summary>
+            <span>Что входит в стоимость работ?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              В цену за м² входит вся работа: демонтаж, черновые работы
+              (стяжка, штукатурка), электрика, сантехника, чистовая отделка,
+              монтаж дверей и плинтусов, финальная уборка.
+              <strong>Не входят</strong>: материалы (черновые и чистовые),
+              мебель, техника, дизайн-проект (если заказывается отдельно).
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal" style="--delay: 0.3s">
+          <summary>
+            <span>Работаете ли вы с государственной приёмкой / в
+              новостройках?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Да, регулярно делаем ремонт в новостройках от застройщика. У нас
+              есть опыт работы с большинством крупных ЖК Москвы и области:
+              ПИК, Эталон, ДСК-1, Самолёт, Донстрой и другие. При
+              необходимости поможем с приёмкой квартиры у застройщика.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal" style="--delay: 0.35s">
+          <summary>
+            <span>Как я буду контролировать ход работ?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              У каждого клиента — <strong>личный кабинет</strong>, где
+              доступны: ежедневные фотоотчёты, актуальная смета, график работ,
+              чат с прорабом. Помимо этого — официальные акты по каждому
+              скрытому этапу (электрика, сантехника), которые подписываются
+              вами лично или дистанционно.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal" style="--delay: 0.4s">
+          <summary>
+            <span>Что если на объекте обнаружатся скрытые проблемы?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Любые непредвиденные ситуации (например, гнилые трубы за стеной)
+              сначала фотографируются и согласовываются с заказчиком. Без
+              вашего письменного согласия мы не выполняем дополнительные
+              работы. Цена в смете фиксированная — никаких внезапных «доплат
+              за пыль и шум» в процессе.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal" style="--delay: 0.45s">
+          <summary>
+            <span>Заключаете ли договор? Что в нём прописано?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Да, договор обязателен. В нём чётко прописаны: перечень работ,
+              материалы, фиксированная цена, сроки, гарантии, штрафные санкции
+              за просрочку, ответственность сторон. Все приложения (смета,
+              график, спецификация материалов) — неотъемлемая часть договора.
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACTS ===== -->
+  <section class="contacts-section" id="contacts">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Свяжитесь с нами</span>
+        <h2 class="section-title reveal">
+          Начнём ваш<br /><em>проект сегодня</em>
+        </h2>
+        <p class="section-sub reveal">
+          Оставьте заявку — наш менеджер перезвонит в течение 30 минут и
+          согласует удобное время для встречи
+        </p>
+      </div>
+
+      <div class="contacts-wrapper">
+        <form class="contact-form reveal" id="contactForm" onsubmit="submitContactForm(event)">
+          <h3>Бесплатная консультация</h3>
+          <div class="form-group">
+            <label>Ваше имя</label>
+            <input type="text" id="contactName" placeholder="Как к вам обращаться?" required />
+          </div>
+          <div class="form-group">
+            <label>Телефон *</label>
+            <input type="tel" id="contactPhone" placeholder="+7 (___) ___-__-__" required />
+          </div>
+          <div class="form-group">
+            <label>Что вас интересует?</label>
+            <select id="contactInterest">
+              <option>Косметический ремонт</option>
+              <option>Капитальный ремонт</option>
+              <option selected>Дизайнерский ремонт под ключ</option>
+              <option>Только дизайн-проект</option>
+              <option>Ремонт ванной / кухни</option>
+              <option>Консультация по выбору</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Комментарий</label>
+            <textarea id="contactMessage" rows="3"
+              placeholder="Например: площадь 65м², хочу скандинавский стиль..."></textarea>
+          </div>
+          <label class="checkbox-row">
+            <input type="checkbox" required checked />
+            <span>Согласен с <a href="#">обработкой персональных данных</a></span>
+          </label>
+          <button type="submit" class="btn-primary">
+            Записаться на консультацию
+          </button>
+          <p class="form-note">
+            Перезвоним в течение 30 минут с 9:00 до 21:00
+          </p>
+        </form>
+
+        <div class="contacts-info">
+          <div class="contact-card reveal">
+            <div class="contact-icon"></div>
+            <h4>Адрес офиса</h4>
+            <p>
+              обл. Брянская, г. Брянск, ул. Кольцевая, д. 45<br />
+            </p>
+          </div>
+          <div class="contact-card reveal">
+            <div class="contact-icon"></div>
+            <h4>Телефон</h4>
+            <p>
+              <a href="tel:+74951234567">+7 (495) 123-45-67</a><br />Пн–Вс:
+              9:00 – 21:00
+            </p>
+          </div>
+          <div class="contact-card reveal">
+            <div class="contact-icon"></div>
+            <h4>Email</h4>
+            <p>
+              <a href="mailto:info@vashagent.ru">info@vashagent.ru</a><br />Отвечаем в течение часа
+            </p>
+          </div>
+          <div class="contact-card reveal">
+            <div class="contact-icon"></div>
+            <h4>Мессенджеры</h4>
+            <p>WhatsApp · Telegram<br />@vashagent_brk</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <span class="logo-icon">⬡</span>
+            <span class="logo-text">ВАШ АГЕНТ</span>
+          </div>
+          <p>
+            Профессиональный ремонт квартир и домов в Брянске с 2020 года.
+            Дизайн, реализация, гарантия 3 года.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" aria-label="VK">VK</a>
+            <a href="#" class="social-btn" aria-label="Telegram">TG</a>
+            <a href="#" class="social-btn" aria-label="WhatsApp">WA</a>
+            <a href="#" class="social-btn" aria-label="Instagram">IG</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h5>Услуги</h5>
+          <ul>
+            <li><a href="#services">Косметический ремонт</a></li>
+            <li><a href="#services">Капитальный ремонт</a></li>
+            <li><a href="#services">Дизайнерский ремонт</a></li>
+            <li><a href="#services">Дизайн-проект</a></li>
+            <li><a href="#services">Ванная под ключ</a></li>
+            <li><a href="#services">Кухня под ключ</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>Компания</h5>
+          <ul>
+            <li><a href="#portfolio">Наши проекты</a></li>
+            <li><a href="#process">Этапы работы</a></li>
+            <li><a href="#advantages">О нас</a></li>
+            <li><a href="#reviews">Отзывы</a></li>
+            <li><a href="#order">Заказать ремонт</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-contacts">
+          <h5>Контакты</h5>
+          <p>Пн – Вс: 9:00 – 21:00</p>
+          <p><a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+          <p><a href="mailto:info@vashagent.ru">info@vashagent.ru</a></p>
+          <p>обл. Брянская, г. Брянск, ул. Кольцевая, д. 45</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 ВАШ АГЕНТ. Все права защищены.</p>
+        <div class="footer-legal">
+          <a href="/admin">Вход для сотрудников</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== ONLINE CONSULTANT ===== -->
+  <div class="consultant-widget" id="consultantWidget">
+    <div class="consultant-chat" id="consultantChat">
+      <div class="chat-header">
+        <div class="chat-agent">
+          <div class="agent-avatar">М</div>
+          <div class="agent-info">
+            <span class="agent-name">Мария</span>
+            <span class="agent-status">● Онлайн</span>
+          </div>
+        </div>
+        <button class="chat-close" onclick="closeConsultant()" aria-label="Закрыть чат">
+          ✕
+        </button>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-msg chat-msg--bot">
+          <div class="msg-avatar">М</div>
+          <div class="msg-content">
+            <p>
+              Здравствуйте! Я Мария, ваш персональный консультант ВАШ АГЕНТ.
+              Чем могу помочь? 😊
+            </p>
+            <span class="msg-time">Сейчас</span>
+          </div>
+        </div>
+      </div>
+      <div class="chat-quick-replies" id="quickReplies">
+        <button onclick="sendQuickReply('Хочу узнать стоимость ремонта')">
+          💰 Узнать стоимость
+        </button>
+        <button onclick="sendQuickReply('Хочу вызвать замерщика')">
+          📏 Вызвать замерщика
+        </button>
+        <button onclick="sendQuickReply('Хочу посмотреть примеры работ')">
+          🖼 Примеры работ
+        </button>
+      </div>
+      <div class="chat-input-row">
+        <input type="text" id="chatInput" placeholder="Напишите сообщение..." onkeypress="handleChatKey(event)" />
+        <button class="chat-send" onclick="sendMessage()" aria-label="Отправить">
+          ➤
+        </button>
+      </div>
+    </div>
+    <button class="consultant-btn" id="consultantBtn" onclick="toggleConsultant()" aria-label="Открыть чат">
+      <span class="chat-icon">💬</span>
+      <span class="chat-label">Онлайн консультант</span>
+      <span class="chat-badge" id="chatBadge">1</span>
+    </button>
+  </div>
+
+  <!-- ===== FLOATING CALL BUTTON (MOBILE) ===== -->
+  <a href="tel:+74951234567" class="mobile-call-fab" aria-label="Позвонить">
+    <span>📞</span>
+  </a>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+
+  <!-- Three.js import map -->
+  <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+
+  <script src="js/main.js"></script>
+  <script type="module" src="js/visualizer.js"></script>
+  <script src="js/calculator.js"></script>
+  <script src="js/chat.js"></script>
+</body>
+
+</html>

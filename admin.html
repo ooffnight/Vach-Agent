@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#245358" />
+  <title>ВАШ АГЕНТ — Административный раздел</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+
+<body class="admin-body">
+
+  <!-- ============================================================
+         LOGIN — показывается, когда нет валидного JWT в localStorage
+         ============================================================ -->
+  <div id="adminLogin" class="admin-login-wrapper">
+    <div class="admin-login-card">
+      <a href="/" class="admin-login-logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">ВАШ АГЕНТ</span>
+      </a>
+      <h1>Вход для сотрудников</h1>
+      <p class="admin-login-sub">Введите учётные данные, чтобы попасть в административный раздел</p>
+
+      <form id="loginForm" novalidate>
+        <div class="form-group">
+          <label for="loginInput">Логин (email)</label>
+          <input type="text" id="loginInput" autocomplete="username" placeholder="admin@vashagent.ru" required />
+        </div>
+        <div class="form-group">
+          <label for="passwordInput">Пароль</label>
+          <input type="password" id="passwordInput" autocomplete="current-password" placeholder="••••••••" required />
+        </div>
+
+        <div id="loginError" class="form-error" style="display:none"></div>
+
+        <button type="submit" class="btn-primary admin-login-btn">Войти</button>
+
+        <p class="admin-login-hint">
+          Доступ предоставляется только сотрудникам компании.<br />
+          <a href="/">← Вернуться на главную</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================
+         ADMIN PANEL — показывается после успешного login
+         ============================================================ -->
+  <div id="adminPanel" class="admin-panel hidden">
+
+    <!-- ── Шапка ──────────────────────────────────── -->
+    <header class="admin-header">
+      <a href="/" class="admin-logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">ВАШ АГЕНТ</span>
+        <span class="admin-badge">Админ-панель</span>
+      </a>
+      <div class="admin-user">
+        <span id="adminGreet">…</span>
+        <button class="btn-secondary btn-sm" onclick="adminLogout()">Выход</button>
+      </div>
+    </header>
+
+    <!-- ── Вкладки ───────────────────────────────── -->
+    <nav class="admin-tabs">
+      <button class="admin-tab active" data-tab="dashboard" onclick="switchTab('dashboard')">📊 Дашборд</button>
+      <button class="admin-tab" data-tab="orders" onclick="switchTab('orders')">📋 Заявки</button>
+      <button class="admin-tab" data-tab="leads" onclick="switchTab('leads')">💬 Лиды</button>
+    </nav>
+
+    <!-- ── Контент вкладок ───────────────────────── -->
+    <main class="admin-content">
+
+      <!-- ───── Вкладка: Дашборд ───── -->
+      <section class="admin-tab-content active" id="tab-dashboard">
+        <div class="admin-section-head">
+          <h2>BI-аналитика</h2>
+          <div class="admin-section-actions">
+            <button id="btnAddUser" class="btn-secondary btn-sm" onclick="alert('Раздел в разработке (R-19 + R-22)')">＋
+              Сотрудник</button>
+            <button class="btn-primary btn-sm" onclick="exportDashboardCSV()">⬇ Экспорт CSV</button>
+          </div>
+        </div>
+
+        <!-- KPI -->
+        <div class="kpi-row">
+          <div class="kpi-card">
+            <div class="kpi-icon">📋</div>
+            <div class="kpi-data">
+              <span class="kpi-value" id="kpiOrders">0</span>
+              <span class="kpi-label">Активных заказов</span>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon">✅</div>
+            <div class="kpi-data">
+              <span class="kpi-value" id="kpiCompleted">0</span>
+              <span class="kpi-label">Завершено в этом месяце</span>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon">⭐</div>
+            <div class="kpi-data">
+              <span class="kpi-value" id="kpiRating">0</span>
+              <span class="kpi-label">Средний рейтинг</span>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon">💰</div>
+            <div class="kpi-data">
+              <span class="kpi-value" id="kpiRevenue">0</span>
+              <span class="kpi-label">Выручка за месяц (млн ₽)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Графики -->
+        <div class="charts-row">
+          <div class="chart-card chart-card--bar">
+            <div class="chart-header">
+              <h4>Заявки по месяцам</h4>
+            </div>
+            <canvas id="ordersChart"></canvas>
+          </div>
+          <div class="chart-card chart-card--donut">
+            <div class="chart-header">
+              <h4>Распределение типов ремонта</h4>
+            </div>
+            <canvas id="typesChart"></canvas>
+            <div class="donut-legend" id="donutLegend"></div>
+          </div>
+        </div>
+
+        <!-- R-17: Таблица активных проектов -->
+        <div class="admin-table-wrap">
+          <h4>Активные проекты</h4>
+          <table class="admin-table" id="activeProjects">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Адрес</th>
+                <th>Тип ремонта</th>
+                <th>Прогресс</th>
+                <th>Начало</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="5" style="text-align:center;padding:24px;">Загрузка...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ───── Вкладка: Заявки ───── -->
+      <section class="admin-tab-content" id="tab-orders">
+        <div class="admin-section-head">
+          <h2>Все заявки</h2>
+          <p class="admin-section-sub">Таблица: /api/orders (JWT-защищён)</p>
+        </div>
+        <div class="admin-table-wrap">
+          <table class="admin-table" id="ordersTable">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Клиент</th>
+                <th>Телефон</th>
+                <th>Тип</th>
+                <th>Площадь</th>
+                <th>Стоимость</th>
+                <th>Статус</th>
+                <th>Создано</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="8" style="text-align:center;padding:24px;">Перейдите на вкладку для загрузки</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ───── Вкладка: Лиды ───── -->
+      <section class="admin-tab-content" id="tab-leads">
+        <div class="admin-section-head">
+          <h2>Лиды из онлайн-консультанта</h2>
+          <p class="admin-section-sub">Таблица: /api/leads (JWT-защищён)</p>
+        </div>
+        <div class="admin-table-wrap">
+          <table class="admin-table" id="leadsTable">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Имя</th>
+                <th>Телефон</th>
+                <th>Email</th>
+                <th>Источник</th>
+                <th>Создано</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="6" style="text-align:center;padding:24px;">Перейдите на вкладку для загрузки</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+  <script src="js/dashboard.js?v=3"></script>
+  <script src="js/admin.js?v=3"></script>
+</body>
+
+</html>

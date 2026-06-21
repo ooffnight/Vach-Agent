@@ -1,0 +1,449 @@
+/* =====================================================
+   admin.css — Стили административного раздела
+   R-14, R-15: визуальное оформление /admin (login + panel)
+   ===================================================== */
+
+:root {
+  --c-bg:     #faf8f5;
+  --c-cream:  #e8ddd0;
+  --c-mist:   #d4e0de;
+  --c-teal:   #5e8281;
+  --c-dark:   #245358;
+  --c-sub:    #6b7b7a;
+  --c-border: #e8e0d3;
+  --c-white:  #ffffff;
+  --c-err:    #c0392b;
+}
+
+.admin-body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--c-bg);
+  color: var(--c-dark);
+  margin: 0;
+  min-height: 100vh;
+}
+
+.hidden { display: none !important; }
+
+/* ───────────────────────────────────────────────────
+   LOGIN
+   ─────────────────────────────────────────────────── */
+.admin-login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, var(--c-mist) 0%, var(--c-cream) 100%);
+}
+.admin-login-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 16px 48px rgba(36, 83, 88, 0.15);
+}
+.admin-login-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: var(--c-dark);
+  text-decoration: none;
+  margin-bottom: 24px;
+}
+.admin-login-logo .logo-icon { font-size: 28px; }
+.admin-login-card h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  color: var(--c-dark);
+  margin: 0 0 8px;
+  font-weight: 500;
+}
+.admin-login-sub {
+  font-size: 14px;
+  color: var(--c-sub);
+  margin: 0 0 24px;
+}
+.admin-login-card .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.admin-login-card .form-group label {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-sub);
+  font-weight: 600;
+}
+.admin-login-card input {
+  padding: 12px 14px;
+  border: 1px solid var(--c-border);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+}
+.admin-login-card input:focus {
+  outline: none;
+  border-color: var(--c-teal);
+}
+.admin-login-btn {
+  width: 100%;
+  margin-top: 8px;
+}
+.admin-login-hint {
+  text-align: center;
+  font-size: 13px;
+  color: var(--c-sub);
+  margin: 16px 0 0;
+  line-height: 1.6;
+}
+.admin-login-hint a {
+  color: var(--c-teal);
+  text-decoration: none;
+}
+.admin-login-hint a:hover { text-decoration: underline; }
+
+.form-error {
+  background: #fdecea;
+  border: 1px solid #f5b7b1;
+  color: var(--c-err);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin: 12px 0;
+}
+
+/* ───────────────────────────────────────────────────
+   ADMIN PANEL: header + tabs
+   ─────────────────────────────────────────────────── */
+.admin-panel { min-height: 100vh; }
+
+.admin-header {
+  background: var(--c-dark);
+  color: #fff;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.admin-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+}
+.admin-logo .logo-icon { font-size: 26px; }
+.admin-badge {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--c-teal);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-left: 8px;
+}
+.admin-user {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+}
+.admin-user .btn-secondary {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  transition: background 0.2s ease;
+}
+.admin-user .btn-secondary:hover { background: rgba(255, 255, 255, 0.25); }
+
+.admin-tabs {
+  background: #fff;
+  padding: 0 32px;
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--c-border);
+}
+.admin-tab {
+  background: none;
+  border: none;
+  padding: 16px 20px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--c-sub);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+.admin-tab:hover { color: var(--c-dark); }
+.admin-tab.active {
+  color: var(--c-dark);
+  border-bottom-color: var(--c-teal);
+  font-weight: 600;
+}
+
+.admin-content {
+  padding: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.admin-tab-content { display: none; }
+.admin-tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+.admin-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.admin-section-head h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  color: var(--c-dark);
+  margin: 0;
+  font-weight: 500;
+}
+.admin-section-sub {
+  font-size: 13px;
+  color: var(--c-sub);
+  margin: 4px 0 0;
+}
+.admin-section-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ───────────────────────────────────────────────────
+   KPI cards
+   ─────────────────────────────────────────────────── */
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.kpi-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid var(--c-border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(36, 83, 88, 0.08);
+}
+.kpi-icon {
+  font-size: 32px;
+  background: var(--c-mist);
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.kpi-data { display: flex; flex-direction: column; gap: 2px; }
+.kpi-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  color: var(--c-dark);
+  font-weight: 500;
+  line-height: 1;
+}
+.kpi-label {
+  font-size: 12px;
+  color: var(--c-sub);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ───────────────────────────────────────────────────
+   Charts
+   ─────────────────────────────────────────────────── */
+.charts-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+@media (max-width: 900px) { .charts-row { grid-template-columns: 1fr; } }
+.chart-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid var(--c-border);
+  min-height: 320px;
+}
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.chart-header h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--c-sub);
+  margin: 0;
+  font-weight: 600;
+}
+.chart-card canvas { max-height: 280px; }
+.donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+}
+.donut-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+.donut-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ───────────────────────────────────────────────────
+   Tables
+   ─────────────────────────────────────────────────── */
+.admin-table-wrap {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid var(--c-border);
+  margin-bottom: 24px;
+  overflow-x: auto;
+}
+.admin-table-wrap h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--c-sub);
+  margin: 0 0 16px;
+  font-weight: 600;
+}
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+}
+.admin-table th {
+  text-align: left;
+  padding: 12px 14px;
+  background: var(--c-bg);
+  color: var(--c-sub);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  border-bottom: 1px solid var(--c-border);
+}
+.admin-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--c-border);
+  color: var(--c-dark);
+}
+.admin-table tr:last-child td { border-bottom: none; }
+.admin-table tr:hover td { background: var(--c-bg); }
+.admin-table select {
+  padding: 6px 10px;
+  border: 1px solid var(--c-border);
+  border-radius: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  background: #fff;
+  cursor: pointer;
+}
+.admin-table select:focus {
+  outline: none;
+  border-color: var(--c-teal);
+}
+
+.progress-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 140px;
+}
+.progress-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--c-mist);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--c-teal) 0%, var(--c-dark) 100%);
+  transition: width 0.6s ease;
+}
+
+/* ───────────────────────────────────────────────────
+   Buttons (общие)
+   ─────────────────────────────────────────────────── */
+.btn-primary {
+  background: var(--c-dark);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+.btn-primary:hover { background: var(--c-teal); }
+.btn-primary:active { transform: scale(0.98); }
+.btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.btn-secondary {
+  background: #fff;
+  color: var(--c-dark);
+  border: 1px solid var(--c-border);
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-secondary:hover {
+  border-color: var(--c-teal);
+  color: var(--c-teal);
+}
+
+.btn-sm { padding: 8px 16px; font-size: 13px; }
