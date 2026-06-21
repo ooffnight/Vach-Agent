@@ -1,13 +1,23 @@
 {
-  "cleanUrls": true,
+  "builds": [
+    {
+      "src": "server/server.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "index.html",
+          "admin.html",
+          "css/**/*",
+          "js/**/*",
+          "images/**/*"
+        ]
+      }
+    }
+  ],
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/index.js"
-    },
-    {
-      "source": "/admin",
-      "destination": "/admin.html"
+      "source": "/(.*)",
+      "destination": "/server/server.js"
     }
   ]
 }
