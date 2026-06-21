@@ -2,14 +2,14 @@
   "name": "vash-agent",
   "version": "2.0.0",
   "description": "ВАШ АГЕНТ — корпоративный сайт компании ремонтно-отделочных услуг. Рефакторинг по дипломной работе Петроченко.",
-  "main": "server/server.js",
+  "main": "api/_server/server.js",
   "scripts": {
-    "start":     "node server/server.js",
-    "dev":       "nodemon server/server.js",
-    "db:init":   "psql -U postgres -d vash_agent -f server/schema.sql",
+    "start":     "node api/_server/server.js",
+    "dev":       "nodemon api/_server/server.js",
+    "db:init":   "psql -U postgres -d vash_agent -f api/_server/schema.sql",
     "db:create": "psql -U postgres -c \"CREATE DATABASE vash_agent;\"",
     "db:reset":  "npm run db:create && npm run db:init",
-    "test:pricing": "node -e \"require('./server/services/pricing'); console.log('pricing OK')\""
+    "test:pricing": "node -e \"require('./api/_server/services/pricing'); console.log('pricing OK')\""
   },
   "keywords": [
     "renovation",

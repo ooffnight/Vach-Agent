@@ -53,7 +53,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
 // ── Статические файлы ──────────────────────────────
-app.use(express.static(path.join(__dirname, '..')));
+app.use(express.static(path.join(__dirname, '../..')));
 
 // ── API Routes ─────────────────────────────────────
 app.use('/api/orders',     require('./routes/orders'));
@@ -75,10 +75,10 @@ app.get('/api/health', (req, res) => {
 
 // ── HTML Routes ────────────────────────────────────
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'index.html'));
+  res.sendFile(path.join(__dirname, '../..', 'index.html'));
 });
 app.get('/admin', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'admin.html'));
+  res.sendFile(path.join(__dirname, '../..', 'admin.html'));
 });
 
 // ── 404 ────────────────────────────────────────────
@@ -86,7 +86,7 @@ app.use((req, res, next) => {
   if (req.path.startsWith('/api/')) {
     return res.status(404).json({ error: 'Endpoint не найден' });
   }
-  res.status(404).sendFile(path.join(__dirname, '..', 'index.html'));
+  res.status(404).sendFile(path.join(__dirname, '../..', 'index.html'));
 });
 
 // ── R-26: централизованный error handler — должен быть последним ─

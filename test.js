@@ -1,5 +1,6 @@
 const bcrypt = require('bcryptjs');
-const db = require('./server/db');
+require('dotenv').config();
+const db = require('./api/_server/db');
 bcrypt.hash('admin123', 10).then(h => {
   return db.query('UPDATE users SET password_hash = $1', [h]);
 }).then(() => {
