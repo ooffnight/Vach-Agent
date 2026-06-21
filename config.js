@@ -26,38 +26,39 @@ const REQUIRED_ENV = [
 function validateEnv() {
   const missing = REQUIRED_ENV.filter((name) => !process.env[name]);
   if (missing.length > 0) {
-    console.error('\n[CONFIG] FATAL: отсутствуют переменные окружения:');
-    missing.forEach((name) => console.error('  - ' + name));
-    console.error('\n[CONFIG] Скопируйте .env.example в .env и заполните значения.\n');
-    process.exit(1);
+    const msg = '[CONFIG] FATAL: отсутствуют переменные окружения: ' + missing.join(', ');
+    console.error(msg);
+    throw new Error(msg);
   }
 
   // Доп. валидации
   if (process.env.JWT_SECRET.length < 32) {
-    console.error('[CONFIG] FATAL: JWT_SECRET должен быть не короче 32 символов.');
-    process.exit(1);
+    const msg = '[CONFIG] FATAL: JWT_SECRET должен быть не короче 32 символов.';
+    console.error(msg);
+    throw new Error(msg);
   }
   const port = Number(process.env.DB_PORT);
   if (!Number.isInteger(port) || port <= 0 || port > 65535) {
-    console.error('[CONFIG] FATAL: DB_PORT должен быть целым числом 1..65535.');
-    process.exit(1);
+    const msg = '[CONFIG] FATAL: DB_PORT должен быть целым числом 1..65535.';
+    console.error(msg);
+    throw new Error(msg);
   }
 }
 
 validateEnv();
 
 module.exports = {
-  PORT:           Number(process.env.PORT) || 3000,
-  NODE_ENV:       process.env.NODE_ENV || 'development',
+  PORT: Number(process.env.PORT) || 3000,
+  NODE_ENV: process.env.NODE_ENV || 'development',
   DB: {
-    host:     process.env.DB_HOST,
-    port:     Number(process.env.DB_PORT),
+    host: process.env.DB_HOST,
+    port: Number(process.env.DB_PORT),
     database: process.env.DB_NAME,
-    user:     process.env.DB_USER,
+    user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
   },
   JWT: {
-    secret:    process.env.JWT_SECRET,
+    secret: process.env.JWT_SECRET,
     expiresIn: process.env.JWT_EXPIRES_IN || '24h',  // R-05: переименовано
   },
   CORS: {
