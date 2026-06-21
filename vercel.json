@@ -1,13 +1,14 @@
 {
   "cleanUrls": true,
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "{css,js,images}/**,*.html"
+    }
+  },
   "rewrites": [
     {
-      "source": "/api/(.*)",
+      "source": "/(.*)",
       "destination": "/api/index.js"
-    },
-    {
-      "source": "/admin",
-      "destination": "/admin.html"
     }
   ]
 }
