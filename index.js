@@ -7,16 +7,29 @@ try {
   const cors = require('cors');
   const helmet = require('helmet');
   const morgan = require('morgan');
+  // VERCEL NFT HACK:
+  // Vercel's Static Analyzer will see these requires and bundle the files into /var/task/server/
+  // But they will never execute at runtime, preventing the path resolution crash!
+  if (false) {
+    require('../server/config');
+    require('../server/middleware/errorHandler');
+    require('../server/routes/orders');
+    require('../server/routes/leads');
+    require('../server/routes/analytics');
+    require('../server/routes/auth');
+    require('../server/routes/visualizer');
+  }
 
-  // Vercel NFT requires EXPLICIT string literals to trace dependencies!
-  let config; try { config = require('../server/config'); } catch (e) { config = require('./server/config'); }
-  let errorHandler; try { errorHandler = require('../server/middleware/errorHandler'); } catch (e) { errorHandler = require('./server/middleware/errorHandler'); }
+  // At runtime, Vercel places this file at /var/task/index.js.
+  // So the relative path to the bundled files is ./server/...
+  const config = require('./server/config');
+  const errorHandler = require('./server/middleware/errorHandler');
 
-  let ordersRoute; try { ordersRoute = require('../server/routes/orders'); } catch (e) { ordersRoute = require('./server/routes/orders'); }
-  let leadsRoute; try { leadsRoute = require('../server/routes/leads'); } catch (e) { leadsRoute = require('./server/routes/leads'); }
-  let analyticsRoute; try { analyticsRoute = require('../server/routes/analytics'); } catch (e) { analyticsRoute = require('./server/routes/analytics'); }
-  let authRoute; try { authRoute = require('../server/routes/auth'); } catch (e) { authRoute = require('./server/routes/auth'); }
-  let visualizerRoute; try { visualizerRoute = require('../server/routes/visualizer'); } catch (e) { visualizerRoute = require('./server/routes/visualizer'); }
+  const ordersRoute = require('./server/routes/orders');
+  const leadsRoute = require('./server/routes/leads');
+  const analyticsRoute = require('./server/routes/analytics');
+  const authRoute = require('./server/routes/auth');
+  const visualizerRoute = require('./server/routes/visualizer');
 
 
   app.use(helmet({
