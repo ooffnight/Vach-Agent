@@ -3,13 +3,28 @@
 const express = require('express');
 const app = express();
 
+function getModule(localPath, vercelPath) {
+  try {
+    return require(localPath);
+  } catch (e) {
+    return require(vercelPath);
+  }
+}
+
 try {
   const cors = require('cors');
   const helmet = require('helmet');
   const morgan = require('morgan');
 
-  const config = require('../server/config');
-  const errorHandler = require('../server/middleware/errorHandler');
+  // Vercel NFT path resolution hack
+  const config = getModule('../server/config', './server/config');
+  const errorHandler = getModule('../server/middleware/errorHandler', './server/middleware/errorHandler');
+
+  const ordersRoute = getModule('../server/routes/orders', './server/routes/orders');
+  const leadsRoute = getModule('../server/routes/leads', './server/routes/leads');
+  const analyticsRoute = getModule('../server/routes/analytics', './server/routes/analytics');
+  const authRoute = getModule('../server/routes/auth', './server/routes/auth');
+  const visualizerRoute = getModule('../server/routes/visualizer', './server/routes/visualizer');
 
   app.use(helmet({
     contentSecurityPolicy: false,
@@ -30,11 +45,11 @@ try {
   app.use(morgan('dev'));
 
   // API Routes
-  app.use('/api/orders', require('../server/routes/orders'));
-  app.use('/api/leads', require('../server/routes/leads'));
-  app.use('/api/analytics', require('../server/routes/analytics'));
-  app.use('/api/auth', require('../server/routes/auth'));
-  app.use('/api/visualizer', require('../server/routes/visualizer'));
+  app.use('/api/orders', ordersRoute);
+  app.use('/api/leads', leadsRoute);
+  app.use('/api/analytics', analyticsRoute);
+  app.use('/api/auth', authRoute);
+  app.use('/api/visualizer', visualizerRoute);
 
   app.get('/api/health', (req, res) => {
     res.json({
@@ -56,7 +71,6 @@ try {
   app.use(errorHandler);
 
 } catch (error) {
-  // Если config.js или что-то еще упало, отдаем ошибку прямо в браузер
   console.error("Vercel Startup Error:", error);
   app.use((req, res) => {
     res.status(500).json({
