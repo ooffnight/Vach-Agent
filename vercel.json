@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "cleanUrls": true,
   "builds": [
     {
       "src": "server/server.js",
@@ -8,8 +8,12 @@
   ],
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/api/(.*)",
       "destination": "/server/server.js"
+    },
+    {
+      "source": "/admin",
+      "destination": "/admin.html"
     }
   ]
 }
