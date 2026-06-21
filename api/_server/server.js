@@ -54,9 +54,10 @@ app.use(morgan('dev'));
 
 // ── ВАЖНО: Вычисляем корень проекта ──
 const projectRoot = path.join(__dirname, '../..');
+const publicDir = path.join(projectRoot, 'public');
 
 // ── Статические файлы ──────────────────────────────
-app.use(express.static(projectRoot));
+app.use(express.static(publicDir));
 
 // ── API Routes ─────────────────────────────────────
 app.use('/api/orders', require('./routes/orders'));
@@ -78,10 +79,10 @@ app.get('/api/health', (req, res) => {
 
 // ── HTML Routes ────────────────────────────────────
 app.get('/', (req, res) => {
-  res.sendFile(path.join(projectRoot, 'index.html'));
+  res.sendFile(path.join(publicDir, 'index.html'));
 });
 app.get('/admin', (req, res) => {
-  res.sendFile(path.join(projectRoot, 'admin.html'));
+  res.sendFile(path.join(publicDir, 'admin.html'));
 });
 
 // ── 404 ────────────────────────────────────────────
@@ -89,7 +90,7 @@ app.use((req, res, next) => {
   if (req.path.startsWith('/api/')) {
     return res.status(404).json({ error: 'Endpoint не найден' });
   }
-  res.status(404).sendFile(path.join(projectRoot, 'index.html'));
+  res.status(404).sendFile(path.join(publicDir, 'index.html'));
 });
 
 // ── R-26: централизованный error handler — должен быть последним ─
