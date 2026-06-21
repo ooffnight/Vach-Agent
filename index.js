@@ -3,28 +3,21 @@
 const express = require('express');
 const app = express();
 
-function getModule(localPath, vercelPath) {
-  try {
-    return require(localPath);
-  } catch (e) {
-    return require(vercelPath);
-  }
-}
-
 try {
   const cors = require('cors');
   const helmet = require('helmet');
   const morgan = require('morgan');
 
-  // Vercel NFT path resolution hack
-  const config = getModule('../server/config', './server/config');
-  const errorHandler = getModule('../server/middleware/errorHandler', './server/middleware/errorHandler');
+  // Vercel NFT requires EXPLICIT string literals to trace dependencies!
+  let config; try { config = require('../server/config'); } catch (e) { config = require('./server/config'); }
+  let errorHandler; try { errorHandler = require('../server/middleware/errorHandler'); } catch (e) { errorHandler = require('./server/middleware/errorHandler'); }
 
-  const ordersRoute = getModule('../server/routes/orders', './server/routes/orders');
-  const leadsRoute = getModule('../server/routes/leads', './server/routes/leads');
-  const analyticsRoute = getModule('../server/routes/analytics', './server/routes/analytics');
-  const authRoute = getModule('../server/routes/auth', './server/routes/auth');
-  const visualizerRoute = getModule('../server/routes/visualizer', './server/routes/visualizer');
+  let ordersRoute; try { ordersRoute = require('../server/routes/orders'); } catch (e) { ordersRoute = require('./server/routes/orders'); }
+  let leadsRoute; try { leadsRoute = require('../server/routes/leads'); } catch (e) { leadsRoute = require('./server/routes/leads'); }
+  let analyticsRoute; try { analyticsRoute = require('../server/routes/analytics'); } catch (e) { analyticsRoute = require('./server/routes/analytics'); }
+  let authRoute; try { authRoute = require('../server/routes/auth'); } catch (e) { authRoute = require('./server/routes/auth'); }
+  let visualizerRoute; try { visualizerRoute = require('../server/routes/visualizer'); } catch (e) { visualizerRoute = require('./server/routes/visualizer'); }
+
 
   app.use(helmet({
     contentSecurityPolicy: false,
